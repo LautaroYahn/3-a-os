@@ -1,0 +1,220 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #FFB6C1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    text-align: center;
+}
+
+.seccion {
+    transition: opacity 0.5s ease;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #fff0f3;
+
+}
+
+.oculto {
+    display: none;
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+}
+
+/* Estilo del Botón */
+.btn-rosa {
+    background-color: white;
+    border: 3px solid #ffb3c1;
+    color: #ff4d6d;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 20px;
+}
+
+.btn-rosa:hover {
+    background-color: #ffb3c1;
+    color: white;
+}
+
+/* Estilo Carta */
+.carta {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    z-index: 10;
+    position: relative;
+}
+
+#contador {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ff4d6d;
+}
+
+/* Corazones Flotantes */
+.corazon {
+    position: absolute;
+    color: #ffb3c1;
+    font-size: 20px;
+    animation: flotar 5s linear infinite;
+    top: 110vh;
+}
+
+@keyframes flotar {
+    from { transform: translateY(0); opacity: 1; }
+    to { transform: translateY(-120vh); opacity: 0; }
+}
+
+/* Galería */
+.galeria {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.galeria img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid #ffb3c1;
+}
+/* Ajustes para celulares */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.8rem; /* Título un poco más pequeño */
+        padding: 0 20px;
+    }
+
+    .carta {
+        width: 80%; /* Que la carta ocupe casi todo el ancho */
+        padding: 20px;
+    }
+
+    #contador {
+        font-size: 1.5rem;
+    }
+
+    .galeria img {
+        width: 120px; /* Fotos un poco más pequeñas para que quepan de a dos */
+        height: 120px;
+    }
+    
+    .btn-rosa {
+        width: 90%; /* Botones más fáciles de tocar con el dedo */
+        font-size: 1rem;
+    }
+}
+.contenedor-carta-final {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    max-width: 500px;
+    margin: auto;
+}
+
+.hoja-carta {
+    background-color: #ffffff;
+    border: 2px solid #ffb3c1; /* Borde rosado marcado */
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1); /* Pequeña sombra */
+    padding: 30px;
+    border-radius: 5px;
+    text-align: center; /* Centrar el texto */
+    margin-bottom: 20px;
+    width: 90%;
+}
+
+.hoja-carta p {
+    font-family: "Oleo Script", system-ui;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+    white-space: pre-line; /* Mantiene los saltos de línea */
+}
+
+/* Ajuste móvil para la carta */
+@media (max-width: 600px) {
+    .hoja-carta {
+        padding: 20px;
+        font-size: 1rem;
+    }
+}
+
+#pantalla1 {
+    background: linear-gradient(-45deg, #fff0f3, #ffccd5, #fff0f3, #ffb3c1);
+    background-size: 400% 400%;
+    animation: gradienteAnimado 10s ease infinite;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Oleo Script", system-ui;
+    font-size: 3.5rem; /* La hacemos un poco más grande porque las cursivas suelen verse pequeñas */
+    color: #ff4d6d;
+    margin-bottom: 10px;
+}
+
+@keyframes gradienteAnimado {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+.cuadro-bienvenida {
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente */
+    border: 3px solid #ffb3c1; /* Borde rosado claro */
+    padding: 40px;
+    border-radius: 20px; /* Bordes redondeados */
+    box-shadow: 0px 10px 30px rgba(255, 179, 193, 0.5); /* Sombra con tono rosado */
+    max-width: 80%;
+    margin-bottom: 30px; /* Espacio entre el cuadro y el botón */
+    transition: transform 0.3s ease;
+}
+
+/* Efecto opcional: el cuadro flota un poquito al pasar el ratón */
+.cuadro-bienvenida:hover {
+    transform: translateY(-5px);
+}
+
+/* Ajuste para que los textos dentro del cuadro se vean bien */
+.cuadro-bienvenida h1 {
+    margin-top: 0;
+    font-size: 2.2rem;
+}
+
+.cuadro-bienvenida h3 {
+    color: #ff4d6d;
+    font-weight: normal;
+    margin-bottom: 0;
+}
+@media (max-width: 600px) {
+    .cuadro-bienvenida {
+        padding: 20px;
+        width: 85%;
+        border-width: 2px; /* Borde un poco más fino en móvil */
+    }
+    
+    .cuadro-bienvenida h1 {
+        font-size: 1.6rem;
+    }
+}
